@@ -109,7 +109,11 @@ window.addEventListener("load", () => {
         context.lineWidth = 4;
         context.lineCap = "round"
         
-        context.lineTo(event.clientX, event.clientY);
+        let x = event.clientX || event.touches[0].clientX;
+        let y = event.clientY  || event.touches[0].clientY;
+
+
+        context.lineTo(x, y);
         context.stroke();
 
         // For smoother experience
@@ -122,6 +126,10 @@ window.addEventListener("load", () => {
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", endPosition);
     canvas.addEventListener("mousemove", draw);
+
+    canvas.addEventListener("touchstart", startPosition);
+        canvas.addEventListener("touchend", endPosition);
+        canvas.addEventListener("touchmove", draw);
 
     // // context.strokeStyle = "red";
     // // context.strokeRect(100, 100, 100, 100);

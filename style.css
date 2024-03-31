@@ -16,6 +16,7 @@
 
 #canvasId {
     border: 2px solid black;
+    touch-action: none;
     /* position: relative; */
     /* display: block;
     margin: 0 auto; */
