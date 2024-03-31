@@ -816,4 +816,8 @@ function mainIterativeLoop(paddedMessageChunksOf512, totalBitsInTheArray){
     const finalChecksumOut = computeFinalCheckSum(initialABCDVectorValues32Bitarray);
     console.log("finalChecksumOut")
     console.log(finalChecksumOut)
+
+    // Update the element with the current generated checksum
+    let spanElement = document.getElementById("checksum");
+    spanElement.innerHTML = finalChecksumOut;
 }
